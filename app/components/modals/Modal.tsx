@@ -1,6 +1,41 @@
+'use client';
 
+import { useState, useEffect, useCallback } from "react";
 
-const Modal = () => {
+interface ModalProps {
+    isOpen?: boolean;
+    onClose: () => void;
+    onSubmit: () => void;
+    title?: string;
+    body?: React.ReactElement;
+    footer?: React.ReactElement;
+    actionLabel: string;
+    disabled?: boolean;
+    secondaryAction?: () => void;
+    secondaryLabel? string;
+}
+
+const Modal: React.FC<ModalProps> = ({
+    isOpen,
+    onClose,
+    onSubmit,
+    title,
+    body,
+    footer,
+    actionLabel,
+    disabled,
+    secondaryAction,
+    secondaryLabel
+}) => {
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        setShowModal(isOpen);
+    }, [isOpen]);
+
+    const handleClose = useCallback(() =>)
+    //Tumeishia hapaaaa... 43:27
+
   return (
     <div>
       
