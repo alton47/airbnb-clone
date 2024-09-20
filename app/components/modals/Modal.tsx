@@ -12,7 +12,7 @@ interface ModalProps {
     actionLabel: string;
     disabled?: boolean;
     secondaryAction?: () => void;
-    secondaryLabel? string;
+    secondaryLabel?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -33,8 +33,36 @@ const Modal: React.FC<ModalProps> = ({
         setShowModal(isOpen);
     }, [isOpen]);
 
-    const handleClose = useCallback(() =>)
-    //Tumeishia hapaaaa... 43:27
+    const handleClose = useCallback(() => {
+      if (disabled) {
+        return;
+      }
+
+      setShowModal(false);
+      setTimeout(() => {
+        onClose();
+      }, 300);
+    }, [disabled, onClose]);
+
+    const handleSubmit = useCallback(() => {
+      if (disabled) {
+        return;
+      }
+
+      onSubmit();  
+    }, [disabled, onSubmit]);
+
+    const handleSecondaryAction = useCallback(() => {
+      if (disabled || !secondaryAction) {
+        return;
+      }
+
+      secondaryAction();
+    }, [disabled, secondaryAction]);
+
+    if (!isOpen) {
+      return null;
+    }
 
   return (
     <div>
