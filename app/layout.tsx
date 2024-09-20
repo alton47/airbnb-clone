@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}> 
-        <Modal isOpen />
+        <Modal title="Hey faza" isOpen />
         <Navbar />
         {children} 
       </body>
