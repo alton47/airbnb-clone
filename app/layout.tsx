@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
-import Modal from "./components/modals/Modal";
+import RegisterModal from "./components/modals/RegisterModal";
 
 export const metadata: Metadata = {
   title: "AirBnB clone | Allan Alton",
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}> 
-        <Modal actionLabel='Submit' title='Fazaa' isOpen />
+        <RegisterModal />
         <Navbar />
         {children} 
       </body>
