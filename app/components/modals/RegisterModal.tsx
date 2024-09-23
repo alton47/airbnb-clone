@@ -16,7 +16,7 @@ const RegisterModal = () => {
 
     const {
         register,
-        handleSubmit,
+        handleSubmit, 
         formState: {
             errors,
         }
@@ -52,6 +52,23 @@ const RegisterModal = () => {
             <Input
                id='email'
                label='Email'
+               disabled={isLoading}
+               register={register}
+               errors={errors}
+               required 
+            />
+            <Input
+               id='name'
+               label='Name'
+               disabled={isLoading}
+               register={register}
+               errors={errors}
+               required 
+            />
+            <Input
+               id='password'
+               type='password'
+               label='Password'
                disabled={isLoading}
                register={register}
                errors={errors}
