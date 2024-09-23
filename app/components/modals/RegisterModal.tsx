@@ -44,7 +44,10 @@ const RegisterModal = () => {
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
-            <Heading />
+            <Heading
+               title='Welcome to Faza'
+               subtitle='Create an Account!'
+            />
         </div>
     )
 
